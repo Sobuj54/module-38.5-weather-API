@@ -10,8 +10,16 @@ const loadTemperature = (city) => {
 
 const displayTemperature = (data) => {
   console.log(data);
-  const temperature = document.getElementById("temperature");
-  temperature.innerText = `${data.main.temp}`;
+  setInnerTextById("temperature", `${data.main.temp}`);
+
+  setInnerTextById("city", `${data.name}`);
+
+  setInnerTextById("weather", `${data.weather[0].main}`);
+};
+
+const setInnerTextById = (id, value) => {
+  const temperature = document.getElementById(id);
+  temperature.innerText = value;
 };
 
 document.getElementById("btn-search").addEventListener("click", function () {
@@ -23,7 +31,7 @@ document.getElementById("btn-search").addEventListener("click", function () {
 document
   .getElementById("search-field")
   .addEventListener("keypress", function (event) {
-    if (event.key) {
+    if (event.key === "Enter") {
       const searchField = document.getElementById("search-field");
       const city = searchField.value;
       loadTemperature(city);
