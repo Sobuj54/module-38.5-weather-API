@@ -25,6 +25,7 @@ const setInnerTextById = (id, value) => {
 document.getElementById("btn-search").addEventListener("click", function () {
   const searchField = document.getElementById("search-field");
   const city = searchField.value;
+  console.log(city);
   loadTemperature(city);
 });
 
@@ -34,8 +35,8 @@ document
     if (event.key === "Enter") {
       const searchField = document.getElementById("search-field");
       const city = searchField.value;
+      console.log(city);
       loadTemperature(city);
     }
   });
-
-loadTemperature("dhaka");
+//loadTemperature("dhaka");
