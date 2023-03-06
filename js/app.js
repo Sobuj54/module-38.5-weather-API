@@ -32,11 +32,12 @@ document.getElementById("btn-search").addEventListener("click", function () {
 document
   .getElementById("search-field")
   .addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
+    if (event.key == "Enter") {
       const searchField = document.getElementById("search-field");
       const city = searchField.value;
       console.log(city);
       loadTemperature(city);
     }
   });
-//loadTemperature("dhaka");
+
+loadTemperature("dhaka");
